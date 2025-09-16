@@ -4,6 +4,7 @@ import { HistoricalTrends } from "@/components/HistoricalTrends";
 import { FutureProjections } from "@/components/FutureProjections";
 import { AquaBot } from "@/components/AquaBot";
 import { BottomNavigation } from "@/components/BottomNavigation";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const [activeScreen, setActiveScreen] = useState("dashboard");
@@ -26,10 +27,10 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-background overflow-hidden">
-      <div className="flex-1 overflow-hidden">
+    <div className="flex flex-col h-screen bg-background">
+      <ScrollArea className="flex-1">
         {renderScreen()}
-      </div>
+      </ScrollArea>
       <BottomNavigation 
         activeScreen={activeScreen} 
         onScreenChange={setActiveScreen} 
