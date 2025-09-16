@@ -47,11 +47,14 @@ export function Dashboard({ onNavigate }: DashboardProps) {
         </button>
       </div>
 
-      {/* Interactive Map Section */}
+      {/* Interactive Map Section with Search */}
       <div className="px-4 mb-6">
         <Card className="overflow-hidden bg-card shadow-card">
           <CardContent className="p-4">
-            <h3 className="font-semibold text-foreground mb-4">Interactive Groundwater Map</h3>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-semibold text-foreground">Interactive Groundwater Map</h3>
+              <span className="text-xs text-muted-foreground">Click on map or search locations</span>
+            </div>
             <InteractiveMap 
               onLocationClick={(location) => {
                 console.log('Location clicked:', location);
